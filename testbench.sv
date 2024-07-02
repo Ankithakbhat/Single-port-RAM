@@ -21,9 +21,9 @@ module top();
   // Asserting and de-asserting the reset
   initial begin
     @(posedge clk);
-    reset = 0;
-    repeat (1) @(posedge clk);
     reset = 1;
+    repeat (1) @(posedge clk);
+    reset = 0;
   end
 
   // Instantiating the interface
