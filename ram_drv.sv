@@ -37,7 +37,7 @@ endgroup
  drv_trans=new();
  //Getting the transaction from generator
 mailbox_gd.get(drv_trans); 
-   if(vif.drv_cb.reset==0)
+  if(vif.drv_cb.reset==1)
  repeat(1) @(vif.drv_cb)
  begin
  vif.drv_cb.write_enb<=0;
