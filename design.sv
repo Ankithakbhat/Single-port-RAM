@@ -26,7 +26,7 @@ reg [7:0] memory [0:31];
 //Memory Write Block Write Operation : When write_enb = 1,
 always @(posedge clk)
 begin 
-   if(!reset)
+   if(reset)
    memory[address] <= 8'bz;
   else if(write_enb && !read_enb) 
    memory[address] <= data_in;
@@ -34,7 +34,7 @@ end
 //Memory Read Block  Read Operation : When read_enb=1
 always @(posedge clk)
 begin
-   if(!reset) 
+   if(reset) 
     data_out <= 8'bz;
   else if(read_enb && !write_enb)
     data_out <= memory[address];
